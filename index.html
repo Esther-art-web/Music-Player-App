@@ -152,23 +152,30 @@
            </div>
            <div class="music-playing">
                 <img src="sweetSimpleThings.jpg" alt="Image cover" class="image-cover" id="image-cover">
-                <div class="music-playing-details">
-                    <div class="music-names">
-                        <div class="title" id="music-playing-name">Love is Bad</div>
-                        <div class="artiste" id="music-playing-artiste">Minden</div>
+                <div class="music-playing-section">
+                    <div class="progress-bar">
+                        <div class="music-progress"></div>
                     </div>
-                    <div class="music-ctrl-section">
-                        <span class="music-ctrl-btn" id="forward">
-                            <i class="fa fa-backward"></i>
-                        </span>
-                        <span class="music-ctrl-btn" id="play" onclick="playSong('alessia_out_of_love')">
-                            <i class="fa fa-play" id="play-icon"></i>
-                        </span>
-                        <span class="music-ctrl-btn" id="backward">
-                            <i class="fa fa-forward"></i>
-                        </span> 
+                    <div class="music-playing-details">
+                        <div class="music-names">
+                            <div class="title" id="music-playing-name">Love is Bad</div>
+                            <div class="artiste" id="music-playing-artiste">Minden</div>
+                        </div>
+                        <div class="music-ctrl-section">
+                            <span class="music-ctrl-btn" id="forward">
+                                <i class="fa fa-backward"></i>
+                            </span>
+                            <span class="music-ctrl-btn" id="play" onclick="toogleSong()">
+                                <i class="fa fa-play" id="play-icon"></i>
+                            </span>
+                            <span class="music-ctrl-btn" id="backward" onclick="forwardSong()">
+                                <i class="fa fa-forward"></i>
+                            </span> 
+                        </div>
                     </div>
+
                 </div>
+                
            </div>
        </div>
    </div> 
