@@ -13,7 +13,9 @@
        <div class="music-container">
            <div class="music-now-playing-bg">
                <div class="music-now-playing">
-                <img src="sweetSimpleThings.jpg" alt="Image cover" class="image-cover-bg">
+                   <div class="music-now-playing-img">
+                     <img src="sweetSimpleThings.jpg" alt="Image cover" class="image-cover-bg" id="image-cover-bg">
+                   </div>
                 <div class="music-now-playing-details">
                     <h1 id="title" class="music-title" >Love is Bad</h1>
                     <h3 id="artiste" class='music-artiste'>Minden</h3>
@@ -21,8 +23,62 @@
                 </div>
                </div>
            </div>
+           <div class="recommended-music">
+               <strong>Recommended songs</strong>
+               <div class="recommended-music-section">
+                    <div class="recommended-music-tab">
+                        <img src="sweetSimpleThings.jpg" alt="" class="recommended-music-image">
+                        <h5 class="title">Love is Bad</h5>
+                        <h6 class="artiste">Minden</h6>
+                    </div>
+                    <div class="recommended-music-tab">
+                        <img src="6lack_pretty_little_fears.jpg" alt="" class="recommended-music-image">
+                        <h5 class="title">pretty little fears</h5>
+                        <h6 class="artiste">6lack</h6>
+                        <audio src="6lack_pretty_little_fears.mp3" id="6lack_pretty_little_fears"></audio>
+                    </div>
+                    <div class="recommended-music-tab">
+                        <img src="jhene_love.jpg" alt="" class="recommended-music-image">
+                        <h5 class="title">Love </h5>
+                        <h6 class="artiste">Jhene</h6>
+                        <audio src="jhene_love.mp3" id="jhene_love"></audio>
+                    </div>
+                    <div class="recommended-music-tab">
+                        <img src="lewis_hollywood.jpg" alt="" class="recommended-music-image">
+                        <h5 class="title">hollywood</h5>
+                        <h6 class="artiste">Lewis Capaldi</h6>
+                        <audio src="lewis_hollywood.mp3" id="lewis_hollywood"></audio>
+                    </div>
+                    <div class="recommended-music-tab">
+                        <img src="ariana_pov.jpg" alt="" class="recommended-music-image">
+                        <h5 class="title">pov</h5>
+                        <h6 class="artiste">Ariana Grande</h6>
+                        <audio src="ariana_pov.mp3" id="ariana_pov"></audio>
+                    </div>
+                    <div class="recommended-music-tab">
+                        <img src="pink_at_my_worst.jpg" alt="" class="recommended-music-image">
+                        <h5 class="title">At my worst</h5>
+                        <h6 class="artiste">Pink sweats ft. Kehlani</h6>
+                        <audio src="pink_at_my_worst.mp3" id="pink_at_my_worst"></audio>
+                    </div>
+                    <div class="recommended-music-tab">
+                        <img src="summer_girls_need_love.jpg" alt="" class="recommended-music-image">
+                        <h5 class="title">girls need love</h5>
+                        <h6 class="artiste">Summer Walker</h6>
+                        <audio src="summer_girls_need_love.mp3" id="summer_girls_need_love"></audio>
+                    </div>
+                    <div class="recommended-music-tab">
+                        <img src="alessia_out_of_love.jpg" alt="" class="recommended-music-image">
+                        <h5 class="title">out of love</h5>
+                        <h6 class="artiste">Alessia cara</h6>
+                        <audio src="alessia_out_of_love.mp3" id="alessia_out_of_love"></audio>
+                    </div>
+                    
+               </div>
+               
+           </div>
            <div class="music-playlist">
-               <div class="music-tab">
+               <div class="music-tab" id="music-tab-1">
                    <span class="music-no">1</span>
                    <div class="music-details">
                        <div class="title">Love is Bad</div>
@@ -30,54 +86,85 @@
                    </div>
                    <span class="music-duration">4:20</span>
                </div>
-               <div class="music-tab">
-                    <span class="music-no">1</span>
+               <div class="music-tab" id="music-tab-2" onclick="musicTabClick('Pretty Little Fears','6lack ft Jcole','6lack_pretty_little_fears')" >
+                <audio src="6lack_pretty_little_fears.mp3" id="6lack_pretty_little_fears"></audio>
+                    <span class="music-no">2</span>
                     <div class="music-details">
-                        <div class="title">Love is Bad</div>
-                        <div class="artiste">Minden</div>
+                        <div class="title">pretty little fears</div>
+                        <div class="artiste">6lack ft Jcole</div>
                     </div>
                     <span class="music-duration">4:20</span>
                 </div>
-                <div class="music-tab">
-                    <span class="music-no">1</span>
+                <div class="music-tab" id="music-tab-3" onclick="musicTabClick('Love','Jhene','jhene_love')">
+                    <audio src="jhene_love.mp3" id="jhene_love"></audio>
+                    <span class="music-no">3</span>
                     <div class="music-details">
-                        <div class="title">Love is Bad</div>
-                        <div class="artiste">Minden</div>
+                        <div class="title">Love</div>
+                        <div class="artiste">Jhene</div>
                     </div>
                     <span class="music-duration">4:20</span>
                 </div>
-                <div class="music-tab">
-                    <span class="music-no">1</span>
+                <div class="music-tab" id="music-tab-4" onclick="musicTabClick('Hollywood','Lewis Capaldi','lewis_hollywood')">
+                    <audio src="lewis_hollywood.mp3" id="lewis_hollywood"></audio>
+                    <span class="music-no">4</span>
                     <div class="music-details">
-                        <div class="title">Love is Bad</div>
-                        <div class="artiste">Minden</div>
+                        <div class="title">Hollywood</div>
+                        <div class="artiste">Lewis Capaldi</div>
                     </div>
                     <span class="music-duration">4:20</span>
                 </div>
-                <div class="music-tab">
-                    <span class="music-no">1</span>
+                <div class="music-tab" id="music-tab-5" onclick="musicTabClick('pov','Ariana Grande','ariana_pov')">
+                    <audio src="ariana_pov.mp3" id="ariana_pov"></audio>
+                    <span class="music-no">5</span>
                     <div class="music-details">
-                        <div class="title">Love is Bad</div>
-                        <div class="artiste">Minden</div>
+                        <div class="title">pov</div>
+                        <div class="artiste">Ariana Grande</div>
+                    </div>
+                    <span class="music-duration">4:20</span>
+                </div>
+                <div class="music-tab" id="music-tab-6" onclick="musicTabClick('At my Worst','Pink Sweats ft Kehlani','pink_at_my_worst')">
+                    <audio src="pink_at_my_worst.mp3" id="pink_at_my_worst"></audio>
+                    <span class="music-no">6</span>
+                    <div class="music-details">
+                        <div class="title">At my worst</div>
+                        <div class="artiste">Pink Sweats ft Kehlani</div>
+                    </div>
+                    <span class="music-duration">4:20</span>
+                </div>
+                <div class="music-tab" id="music-tab-7" onclick="musicTabClick('Girls Need Love','Summer Walker ft Drake','summer_girls_need_love')">
+                    <audio src="summer_girls_need_love.mp3" id="summer_girls_need_love"></audio>
+                    <span class="music-no">7</span>
+                    <div class="music-details">
+                        <div class="title">Girls need love</div>
+                        <div class="artiste">Summer Walker ft Drake</div>
+                    </div>
+                    <span class="music-duration">4:20</span>
+                </div>
+                <div class="music-tab" id="music-tab-8" onclick="musicTabClick('Out of Love','Alessia Cara','alessia_out_of_love')">
+                    <audio src="alessia_out_of_love.mp3" id="alessia_out_of_love"></audio>
+                    <span class="music-no">8</span>
+                    <div class="music-details">
+                        <div class="title">Out of Love</div>
+                        <div class="artiste">Alessia Cara</div>
                     </div>
                     <span class="music-duration">4:20</span>
                 </div>
            </div>
            <div class="music-playing">
-                <img src="sweetSimpleThings.jpg" alt="Image cover" class="image-cover play">
+                <img src="sweetSimpleThings.jpg" alt="Image cover" class="image-cover" id="image-cover">
                 <div class="music-playing-details">
                     <div class="music-names">
-                        <div class="title">Love is Bad</div>
-                        <div class="artiste">Minden</div>
+                        <div class="title" id="music-playing-name">Love is Bad</div>
+                        <div class="artiste" id="music-playing-artiste">Minden</div>
                     </div>
                     <div class="music-ctrl-section">
-                        <span class="music-ctrl-btn">
+                        <span class="music-ctrl-btn" id="forward">
                             <i class="fa fa-backward"></i>
                         </span>
-                        <span class="music-ctrl-btn">
-                            <i class="fa fa-play"></i>
+                        <span class="music-ctrl-btn" id="play" onclick="playSong('alessia_out_of_love')">
+                            <i class="fa fa-play" id="play-icon"></i>
                         </span>
-                        <span class="music-ctrl-btn">
+                        <span class="music-ctrl-btn" id="backward">
                             <i class="fa fa-forward"></i>
                         </span> 
                     </div>
@@ -85,5 +172,6 @@
            </div>
        </div>
    </div> 
+   <script src="script.js"></script>
 </body>
 </html>
