@@ -29,7 +29,7 @@ let song= document.getElementById("music-playing-audio");
 let prevTabSong = [null];
 
 let now_playing_id = 1;
-let prev_playing_id = null
+let prev_playing_id = null;
 
 const playlist_details = {'Minden': ["Love is Bad", "minden_love_is_bad"],
                          '6lack ft Jcole' : ["Pretty Little Fears","6lack_pretty_little_fears"],
@@ -89,7 +89,7 @@ const musicTabClick =(name, artiste, audio, no=1)=>{
     prevTabSong.push(no);
     
     now_playing_id= no;
-    prev_playing_id=prevTabSong[0]
+    prev_playing_id=prevTabSong[0];
     
     if(prev_playing_id){
         document.getElementById(`music-no-${prev_playing_id}`).style.display='block';
