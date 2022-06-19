@@ -59,7 +59,7 @@ const playSong = (audio) =>{
     var music_playing_icon= document.getElementById(`music-gif-${now_playing_id}`);
     
     modifyUIOnSongPlay(now_playing_id);
-    music_playing_icon.src="Music.gif";
+    music_playing_icon.src="/images/Music.gif";
     music_playing_icon.style.display='block';
     playlist_audio.play();   
 }
@@ -69,7 +69,7 @@ const pauseSong=(audio)=>{
     var playlist_audio= document.getElementById(audio);
     playlist_audio.pause();
     var music_playing_icon=  document.getElementById(`music-gif-${now_playing_id}`);
-    music_playing_icon.src="music_pause.jpg";
+    music_playing_icon.src="/images/music_pause.jpg";
     music_playing_icon.style.display='block';
    
 }
@@ -100,9 +100,9 @@ const musicTabClick =(name, artiste, audio, no=1)=>{
     music_playing_artiste.innerHTML= artiste;
     music_title.innerHTML= name;
     music_artiste.innerHTML= artiste;
-    image_cover.src= `${audio}.jpg`;
-    music_now_playing_bg.style.backgroundImage=`url(${audio}.jpg`;
-    image_cover_bg.src=`${audio}.jpg`;
+    image_cover.src= `/images/${audio}.jpg`;
+    music_now_playing_bg.style.backgroundImage=`url(/images/${audio}.jpg`;
+    image_cover_bg.src=`/images/${audio}.jpg`;
     song.src=`/audios/${audio}.mp3`;
     tooglePlay();
     
