@@ -13,7 +13,7 @@
 .music-now-playing-bg{
     width: 100%;
     height:calc(220px);
-    background: url("/images/minden_love_is_bad.jpg") no-repeat;
+    background: url("images/minden_love_is_bad.jpg") no-repeat;
     background-size: 100%;
     z-index: 0;
     position: fixed;
