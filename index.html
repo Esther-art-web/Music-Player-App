@@ -14,7 +14,7 @@
            <div class="music-now-playing-bg">
                <div class="music-now-playing">
                    <div class="music-now-playing-img">
-                     <img src="sweetSimpleThings.jpg" alt="Image cover" class="image-cover-bg" id="image-cover-bg">
+                     <img src="minden_love_is_bad.jpg" alt="Image cover" class="image-cover-bg" id="image-cover-bg">
                    </div>
                 <div class="music-now-playing-details">
                     <h1 id="title" class="music-title" >Love is Bad</h1>
@@ -27,13 +27,13 @@
                <strong>Recommended songs</strong>
                <div class="recommended-music-section">
                     <div class="recommended-music-tab">
-                        <img src="sweetSimpleThings.jpg" alt="" class="recommended-music-image">
+                        <img src="minden_love_is_bad.jpg" alt="" class="recommended-music-image">
                         <h5 class="title">Love is Bad</h5>
                         <h6 class="artiste">Minden</h6>
                     </div>
                     <div class="recommended-music-tab">
                         <img src="6lack_pretty_little_fears.jpg" alt="" class="recommended-music-image">
-                        <h5 class="title">pretty little fears</h5>
+                        <h5 class="title">Pretty little fears</h5>
                         <h6 class="artiste">6lack</h6>
                     </div>
                     <div class="recommended-music-tab">
@@ -71,9 +71,9 @@
                
            </div>
            <div class="music-playlist">
-               <div class="music-tab" id="music-tab-1">
+               <div class="music-tab" id="music-tab-1" onclick="musicTabClick('Love is Bad','Minden','minden_love_is_bad', 1)">
                    <span class="music-no" id="music-no-1">  1</span>
-                    <img src="" alt="music playing" class="gif" id="music-gif-1">
+                    <img src="" alt="music playing" class="gif music-no" id="music-gif-1">
                    <div class="music-details">
                        <div class="title">Love is Bad</div>
                        <div class="artiste">Minden</div>
@@ -83,19 +83,19 @@
                <div class="music-tab" id="music-tab-2" onclick="musicTabClick('Pretty Little Fears','6lack ft Jcole','6lack_pretty_little_fears', 2)" >
                 <span class="music-no" id="music-no-2"> 
                     2
-                 </span>
-                 <img src="" alt="music playing" class="gif" id="music-gif-2">
-                    <div class="music-details">
-                        <div class="title">pretty little fears</div>
-                        <div class="artiste">6lack ft Jcole</div>
-                    </div>
-                    <span class="music-duration">4:20</span>
+                </span>
+                <img src="" alt="music playing" class="gif music-no" id="music-gif-2">
+                <div class="music-details">
+                    <div class="title">Pretty little fears</div>
+                    <div class="artiste">6lack ft Jcole</div>
+                </div>
+                <span class="music-duration">4:20</span>
                 </div>
                 <div class="music-tab" id="music-tab-3" onclick="musicTabClick('Love','jhene','jhene_love', 3)">
                     <span class="music-no" id="music-no-3"> 
                         3
                      </span>
-                     <img src="" alt="music playing" class="gif" id="music-gif-3">
+                     <img src="" alt="music playing" class="gif music-no" id="music-gif-3">
                     <div class="music-details">
                         <div class="title">Love</div>
                         <div class="artiste">Jhene</div>
@@ -106,7 +106,7 @@
                     <span class="music-no" id="music-no-4"> 
                         4
                      </span>
-                     <img src="" alt="music playing" class="gif" id="music-gif-4">
+                     <img src="" alt="music playing" class="gif music-no" id="music-gif-4">
                     <div class="music-details">
                         <div class="title">Hollywood</div>
                         <div class="artiste">Lewis Capaldi</div>
@@ -117,9 +117,9 @@
                     <span class="music-no" id="music-no-5"> 
                         5
                      </span>
-                     <img src="" alt="music playing" class="gif" id="music-gif-5">
+                     <img src="" alt="music playing" class="gif music-no" id="music-gif-5">
                     <div class="music-details">
-                        <div class="title">pov</div>
+                        <div class="title">POV</div>
                         <div class="artiste">Ariana Grande</div>
                     </div>
                     <span class="music-duration">4:20</span>
@@ -128,7 +128,7 @@
                     <span class="music-no" id="music-no-6"> 
                         6
                      </span>
-                     <img src="" alt="music playing" class="gif" id="music-gif-6">
+                     <img src="" alt="music playing" class="gif music-no" id="music-gif-6">
                     <div class="music-details">
                         <div class="title">At my worst</div>
                         <div class="artiste">Pink Sweats ft Kehlani</div>
@@ -139,7 +139,7 @@
                     <span class="music-no" id="music-no-7"> 
                         7
                      </span>
-                     <img src="" alt="music playing" class="gif" id="music-gif-7">
+                     <img src="" alt="music playing" class="gif music-no" id="music-gif-7">
                     <div class="music-details">
                         <div class="title">Girls need love</div>
                         <div class="artiste">Summer Walker ft Drake</div>
@@ -150,7 +150,7 @@
                     <span class="music-no" id="music-no-8"> 
                         8
                      </span>
-                     <img src="" alt="music playing" class="gif" id="music-gif-8">
+                     <img src="" alt="music playing" class="gif music-no" id="music-gif-8">
                     <div class="music-details">
                         <div class="title">Out of Love</div>
                         <div class="artiste">Alessia Cara</div>
@@ -159,13 +159,13 @@
                 </div>
            </div>
            <div class="music-playing">
-                <img src="sweetSimpleThings.jpg" alt="Image cover" class="image-cover" id="image-cover">
+                <img src="minden_love_is_bad.jpg" alt="Image cover" class="image-cover" id="image-cover">
                 <div class="music-playing-section">
                     <div class="progress-bar">
                         <div class="music-progress"></div>
                     </div>
                     <div class="music-playing-details">
-                        <audio src="" id="music-playing-audio"></audio>
+                        <audio src="/audios/lewis_hollywood.mp3" id="music-playing-audio"></audio>
                         <div class="music-names">
                             <div class="title" id="music-playing-name">Love is Bad</div>
                             <div class="artiste" id="music-playing-artiste">Minden</div>
@@ -174,7 +174,7 @@
                             <span class="music-ctrl-btn" id="forward" onclick="prevSong()">
                                 <i class="fa fa-backward"></i>
                             </span>
-                            <span class="music-ctrl-btn" id="play" onclick="toogleSong()">
+                            <span class="music-ctrl-btn" id="play" onclick="tooglePlay()">
                                 <i class="fa fa-play" id="play-icon"></i>
                             </span>
                             <span class="music-ctrl-btn" id="backward" onclick="nextSong()">

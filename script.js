@@ -26,11 +26,12 @@ let music_title= document.getElementById("title");
 let music_artiste = document.getElementById("artiste");
 
 let song= document.getElementById("music-playing-audio");
-let prevTabSong = [];
+let prevTabSong = [null];
 
-let now_playing_id = null;
+let now_playing_id = 1;
+let prev_playing_id = null
 
-const playlist_details = {'Minden': ["Love is Bad", 2],
+const playlist_details = {'Minden': ["Love is Bad", "minden_love_is_bad"],
                          '6lack ft Jcole' : ["Pretty Little Fears","6lack_pretty_little_fears"],
                          'jhene' : ["Love", "jhene_love" ],
                          'Lewis Capaldi' :["Hollywood", "lewis_hollywood"],
@@ -38,14 +39,7 @@ const playlist_details = {'Minden': ["Love is Bad", 2],
                          'Pink Sweats ft Kehlani': ["At my worst","pink_at_my_worst"],
                          'Summer Walker ft Drake' : ["Girls need love", "summer_girls_need_love" ],
                          'Alessia Cara' : ["Out of Love", "alessia_out_of_love"]}
-// const playlist_songs = ["6lack_pretty_little_fears",
-//                          "jhene_love", 
-//                          "lewis_hollywood", 
-//                          "ariana_pov",
-//                          "pink_at_my_worst",
-//                          "summer_girls_need_love",
-//                          "alessia_out_of_love"
-//                         ]
+
 const startSong= () =>{
     play_icon.classList.remove('fa-play');
     play_icon.classList.add('fa-pause');
@@ -57,15 +51,21 @@ const stopSong =()=>{
 const playSong = (audio) =>{
     startSong();
     image_cover.classList.add('play');
+    let animationState= image_cover.style.animationPlayState;
+    if (animationState == 'paused'){
+        image_cover.style.animationPlayState='running';
+    }
     var playlist_audio= document.getElementById(audio);
-    var music_playing_icon=  document.getElementById(`music-gif-${now_playing_id}`);
+    var music_playing_icon= document.getElementById(`music-gif-${now_playing_id}`);
+    
+    modifyUIOnSongPlay(now_playing_id);
     music_playing_icon.src="Music.gif";
     music_playing_icon.style.display='block';
     playlist_audio.play();   
 }
 const pauseSong=(audio)=>{
     stopSong();
-    image_cover.classList.remove('play');
+    image_cover.style.animationPlayState='paused';
     var playlist_audio= document.getElementById(audio);
     playlist_audio.pause();
     var music_playing_icon=  document.getElementById(`music-gif-${now_playing_id}`);
@@ -73,15 +73,29 @@ const pauseSong=(audio)=>{
     music_playing_icon.style.display='block';
    
 }
-const toogleSong =(audio= "music-playing-audio")=>{
+const tooglePlay = (audio= "music-playing-audio")=>{
     if (play_icon.classList.contains("fa-play")){
         playSong(audio);
     }else{
         pauseSong(audio);
     }
 }
-const musicTabClick =(name, artiste, audio, no)=>{
+const modifyUIOnSongPlay = (no) => {
+    document.getElementById(`music-no-${no}`).style.display='none';
+    document.getElementById(`music-gif-${no}`).style.display='none';
+}
+const musicTabClick =(name, artiste, audio, no=1)=>{
+    stopSong();
+    prevTabSong.push(no);
+    
     now_playing_id= no;
+    prev_playing_id=prevTabSong[0]
+    
+    if(prev_playing_id){
+        document.getElementById(`music-no-${prev_playing_id}`).style.display='block';
+        document.getElementById(`music-gif-${prev_playing_id}`).style.display='none';
+    }
+    prevTabSong.shift();
     music_playing_name.innerHTML= name;
     music_playing_artiste.innerHTML= artiste;
     music_title.innerHTML= name;
@@ -89,10 +103,9 @@ const musicTabClick =(name, artiste, audio, no)=>{
     image_cover.src= `${audio}.jpg`;
     music_now_playing_bg.style.backgroundImage=`url(${audio}.jpg`;
     image_cover_bg.src=`${audio}.jpg`;
-    document.getElementById(`music-no-${no}`).style.display='none';
-    document.getElementById(`music-gif-${no}`).style.display='none';
-    song.src=`${audio}.mp3`;
-    toogleSong();
+    song.src=`/audios/${audio}.mp3`;
+    tooglePlay();
+    
 }
 
 const nextSong =()=>{
@@ -100,7 +113,7 @@ const nextSong =()=>{
     for (var i=0; i < artistes.length; i++){
         if (music_playing_artiste.innerHTML === artistes[i]){
             i+=1;
-            toogleSong();
+            tooglePlay();
             document.getElementById(`music-no-${i}`).style.display='block';
             document.getElementById(`music-gif-${i}`).style.display='none';
             let music= playlist_details[artistes[i]][0];
@@ -114,7 +127,7 @@ const prevSong =() =>{
     var artistes= (Object.keys(playlist_details));
     for (var i= (artistes.length - 1); 0 <= i && i < artistes.length; i--){
         if (music_playing_artiste.innerHTML === artistes[i]){
-            toogleSong();
+            tooglePlay();
             document.getElementById(`music-no-${i + 1}`).style.display='block';
             document.getElementById(`music-gif-${i + 1}`).style.display='none';
             i-=1;
