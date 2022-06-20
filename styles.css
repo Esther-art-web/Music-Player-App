@@ -185,6 +185,7 @@ progress{
     border-radius: 10px;
     height: 3px;
     position: absolute;
+    transition: width .5s;
 }
 .progress{
     animation: progress 0.1s linear 0s ;
