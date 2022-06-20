@@ -193,7 +193,7 @@ progress{
 
 @media only screen and (min-width: 768px) and (max-width: 991px){
     .image-cover{
-        width: 6em;
+        width: 5em;
     }
     .recommended-music{
         display: block;
@@ -222,7 +222,7 @@ progress{
         flex: 1;
     }
     .music-playing{
-        padding: 0 2em;
+        padding: .5em 2em;
     }
     .music-playing-section{
         max-width: 87%;
@@ -247,7 +247,7 @@ h5.title{
 }
 @media only screen and (min-width: 992px){
     .image-cover{
-        width: 6em;
+        width: 5em;
     }
     .recommended-music{
         display: block;
@@ -274,7 +274,7 @@ h5.title{
         margin: 0 1em 0;
     }
     .music-playing{
-        padding: 0 2em;
+        padding: .5em 2em;
     }
     .music-ctrl-section{
         flex: 1;

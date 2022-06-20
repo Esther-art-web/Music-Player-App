@@ -46,7 +46,18 @@ const playlist_details = {'Minden': ["Love is Bad", "minden_love_is_bad"],
                          'Summer Walker ft Drake' : ["Girls need love", "summer_girls_need_love" ],
                          'Alessia Cara' : ["Out of Love", "alessia_out_of_love"]}
                                                   
-
+document.body.addEventListener('keydown', (e)=>{
+    // e.preventDefault();
+    console.log(e.key)
+    if (e.key == "MediaPlayPause"){
+        console.log(e)
+        tooglePlay()
+    }else if(e.key == 'MediaTrackPrevious'){
+        prevSong()
+    }else if(e.key == "MediaTrackNext"){
+        nextSong()
+    }
+})
 const updateProgress = (e) => {
     const {duration, currentTime} = e.srcElement;
     const progressPercent = Math.round((currentTime / duration) * 100);
@@ -65,6 +76,7 @@ const stopSong =()=>{
     play_icon.classList.add('fa-play');
 }
 const playSong = () =>{
+    console.log('Play')
     startSong();
     image_cover.classList.add('play');
     let animationState= image_cover.style.animationPlayState;
@@ -85,6 +97,7 @@ const playSong = () =>{
     song.addEventListener('timeupdate', updateProgress)
 }
 const pauseSong=()=>{
+    console.log('Paused')
     stopSong();
     image_cover.style.animationPlayState='paused';
     song.pause();
@@ -96,8 +109,10 @@ const pauseSong=()=>{
 const tooglePlay = ()=>{
     if (play_icon.classList.contains("fa-play")){
         playSong();
+        // pauseSong();
     }else{
         pauseSong();
+        // playSong();
     }
 }
 const modifyUIOnSongPlay = (no) => {
