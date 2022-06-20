@@ -8,6 +8,7 @@ let playlist5= document.getElementById('music-tab-5');
 let playlist6= document.getElementById('music-tab-6');
 let playlist7= document.getElementById('music-tab-7');
 let playlist8= document.getElementById('music-tab-8');
+let playlist9= document.getElementById('music-tab-9');
 
 let forwardBtn= document.getElementById("forward");
 let playBtn= document.getElementById("play");
@@ -26,12 +27,17 @@ let music_title= document.getElementById("title");
 let music_artiste = document.getElementById("artiste");
 
 let song= document.getElementById("music-playing-audio");
+let songSrc=document.getElementById('music');
+let songProgress=document.getElementById('progress');
+
+
 let prevTabSong = [null];
 
 let now_playing_id = 1;
 let prev_playing_id = null;
 
 const playlist_details = {'Minden': ["Love is Bad", "minden_love_is_bad"],
+                         'Ali Gatie': ["It's you", "ali_its_you"],    
                          '6lack ft Jcole' : ["Pretty Little Fears","6lack_pretty_little_fears"],
                          'jhene' : ["Love", "jhene_love" ],
                          'Lewis Capaldi' :["Hollywood", "lewis_hollywood"],
@@ -39,7 +45,17 @@ const playlist_details = {'Minden': ["Love is Bad", "minden_love_is_bad"],
                          'Pink Sweats ft Kehlani': ["At my worst","pink_at_my_worst"],
                          'Summer Walker ft Drake' : ["Girls need love", "summer_girls_need_love" ],
                          'Alessia Cara' : ["Out of Love", "alessia_out_of_love"]}
+                                                  
 
+const updateProgress = (e) => {
+    const {duration, currentTime} = e.srcElement;
+    const progressPercent = Math.round((currentTime / duration) * 100);
+    songProgress.style.width = `${progressPercent}%`
+    if(songProgress.style.width == '100%'){
+        console.log('Done')
+        nextSong();
+    }  
+}
 const startSong= () =>{
     play_icon.classList.remove('fa-play');
     play_icon.classList.add('fa-pause');
@@ -48,36 +64,40 @@ const stopSong =()=>{
     play_icon.classList.remove('fa-pause');
     play_icon.classList.add('fa-play');
 }
-const playSong = (audio) =>{
+const playSong = () =>{
     startSong();
     image_cover.classList.add('play');
     let animationState= image_cover.style.animationPlayState;
     if (animationState == 'paused'){
         image_cover.style.animationPlayState='running';
     }
-    var playlist_audio= document.getElementById(audio);
+    // song.onloadedmetadata= function(){
+    //     let songDuration = song.duration;
+    //     let songDurationMins =Math.floor(songDuration / 60)
+    //     let songRem = Math.round(songDuration % 60)
+    //     console.log(`${songDurationMins}:${songRem}`)
+    // }
     var music_playing_icon= document.getElementById(`music-gif-${now_playing_id}`);
-    
     modifyUIOnSongPlay(now_playing_id);
     music_playing_icon.src="./images/Music.gif";
     music_playing_icon.style.display='block';
-    playlist_audio.play();   
+    song.play();  
+    song.addEventListener('timeupdate', updateProgress)
 }
-const pauseSong=(audio)=>{
+const pauseSong=()=>{
     stopSong();
     image_cover.style.animationPlayState='paused';
-    var playlist_audio= document.getElementById(audio);
-    playlist_audio.pause();
+    song.pause();
     var music_playing_icon=  document.getElementById(`music-gif-${now_playing_id}`);
     music_playing_icon.src="./images/music_pause.jpg";
     music_playing_icon.style.display='block';
    
 }
-const tooglePlay = (audio= "music-playing-audio")=>{
+const tooglePlay = ()=>{
     if (play_icon.classList.contains("fa-play")){
-        playSong(audio);
+        playSong();
     }else{
-        pauseSong(audio);
+        pauseSong();
     }
 }
 const modifyUIOnSongPlay = (no) => {
@@ -87,7 +107,6 @@ const modifyUIOnSongPlay = (no) => {
 const musicTabClick =(name, artiste, audio, no=1)=>{
     stopSong();
     prevTabSong.push(no);
-    
     now_playing_id= no;
     prev_playing_id=prevTabSong[0];
     
@@ -96,22 +115,26 @@ const musicTabClick =(name, artiste, audio, no=1)=>{
         document.getElementById(`music-gif-${prev_playing_id}`).style.display='none';
     }
     prevTabSong.shift();
-    music_playing_name.innerHTML= name;
-    music_playing_artiste.innerHTML= artiste;
-    music_title.innerHTML= name;
-    music_artiste.innerHTML= artiste;
+    music_playing_name.textContent= name;
+    music_playing_artiste.textContent= artiste;
+    music_title.textContent= name;
+    music_artiste.textContent= artiste;
     image_cover.src= `./images/${audio}.jpg`;
     music_now_playing_bg.style.backgroundImage=`url(./images/${audio}.jpg`;
     image_cover_bg.src=`./images/${audio}.jpg`;
     song.src=`./audios/${audio}.mp3`;
+    songSrc.src=`./audios/${audio}.mp3`;
+    console.log(music_playing_name);
     tooglePlay();
     
 }
 
 const nextSong =()=>{
+    songProgress.style.width='0%'
     var artistes= (Object.keys(playlist_details));
     for (var i=0; i < artistes.length; i++){
-        if (music_playing_artiste.innerHTML === artistes[i]){
+        if (music_playing_artiste.textContent === artistes[i]){
+            console.log(music_playing_artiste.textContent, artistes[i])
             i+=1;
             tooglePlay();
             document.getElementById(`music-no-${i}`).style.display='block';
@@ -126,7 +149,7 @@ const nextSong =()=>{
 const prevSong =() =>{
     var artistes= (Object.keys(playlist_details));
     for (var i= (artistes.length - 1); 0 <= i && i < artistes.length; i--){
-        if (music_playing_artiste.innerHTML === artistes[i]){
+        if (music_playing_artiste.textContent === artistes[i]){
             tooglePlay();
             document.getElementById(`music-no-${i + 1}`).style.display='block';
             document.getElementById(`music-gif-${i + 1}`).style.display='none';

@@ -22,7 +22,6 @@
 .music-now-playing{
     width: 100%;
     height:calc(220px);
-    /* background-color: #FDF7F9; */
     background-color: rgba(255, 255, 255, 0.9);
     position: fixed;
     top: 0;
@@ -45,9 +44,9 @@
     padding:1em;
 }
 .music-title{
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: 900;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
 }
 
 .music-artiste{
@@ -108,8 +107,9 @@
     justify-content: space-between;
 }
 .music-playing-details{
+    flex: 5;
     width: 90%;
-    margin: 1em auto;
+    margin: .5em auto;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -163,20 +163,28 @@
     flex: 2;
     max-width: 80%;
     height: 4em;
+    height: fit-content;
     display: flex;
     flex-direction: column;
 }
 .progress-bar{
-    width: 90%;
-    height: .2em;
-    background-color: #ebeaea;
-    margin: 0 auto;
-    border-radius: 10px;
-}
-.music-progress{
+    justify-self: end;
     background-color: #C5C1C2;
-    width: 20%;
-    height: .2em;
+    width: 90%;
+    margin: 0 auto;
+
+    border-radius: 10px;
+    height: 3px;
+    position: relative;
+}
+progress{
+    background-color: #C5C1C2;
+    /* background-color: #ebeaea; */
+    /* width: 100%; */
+    width: 0;
+    border-radius: 10px;
+    height: 3px;
+    position: absolute;
 }
 .progress{
     animation: progress 0.1s linear 0s ;

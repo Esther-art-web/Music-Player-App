@@ -26,42 +26,47 @@
            <div class="recommended-music">
                <strong>Recommended songs</strong>
                <div class="recommended-music-section">
-                    <div class="recommended-music-tab">
+                    <div class="recommended-music-tab" onclick="musicTabClick('Love is Bad','Minden','minden_love_is_bad', 1)">
                         <img src="./images/minden_love_is_bad.jpg" alt="" class="recommended-music-image">
                         <h5 class="title">Love is Bad</h5>
                         <h6 class="artiste">Minden</h6>
                     </div>
-                    <div class="recommended-music-tab">
+                    <div class="recommended-music-tab" onclick="musicTabClick('It\'s you','Ali Gatie','ali_its_you', 2)">
+                        <img src="./images/ali_its_you.jpg" alt="" class="recommended-music-image">
+                        <h5 class="title">It's you</h5>
+                        <h6 class="artiste">Ali Gatie</h6>
+                    </div>
+                    <div class="recommended-music-tab" onclick="musicTabClick('Pretty Little Fears','6lack ft Jcole','6lack_pretty_little_fears', 3)">
                         <img src="./images/6lack_pretty_little_fears.jpg" alt="" class="recommended-music-image">
                         <h5 class="title">Pretty little fears</h5>
                         <h6 class="artiste">6lack</h6>
                     </div>
-                    <div class="recommended-music-tab">
+                    <div class="recommended-music-tab" onclick="musicTabClick('Love','jhene','jhene_love', 4)">
                         <img src="./images/jhene_love.jpg" alt="" class="recommended-music-image">
                         <h5 class="title">Love </h5>
                         <h6 class="artiste">Jhene</h6>
                     </div>
-                    <div class="recommended-music-tab">
+                    <div class="recommended-music-tab" onclick="musicTabClick('Hollywood','Lewis Capaldi','lewis_hollywood', 5)">
                         <img src="./images/lewis_hollywood.jpg" alt="" class="recommended-music-image">
-                        <h5 class="title">hollywood</h5>
+                        <h5 class="title">Hollywood</h5>
                         <h6 class="artiste">Lewis Capaldi</h6>
                     </div>
-                    <div class="recommended-music-tab">
+                    <div class="recommended-music-tab" onclick="musicTabClick('pov','Ariana Grande','ariana_pov', 6)">
                         <img src="./images/ariana_pov.jpg" alt="" class="recommended-music-image">
                         <h5 class="title">pov</h5>
                         <h6 class="artiste">Ariana Grande</h6>
                     </div>
-                    <div class="recommended-music-tab">
+                    <div class="recommended-music-tab" onclick="musicTabClick('At my Worst','Pink Sweats ft Kehlani','pink_at_my_worst', 7)">
                         <img src="./images/pink_at_my_worst.jpg" alt="" class="recommended-music-image">
                         <h5 class="title">At my worst</h5>
                         <h6 class="artiste">Pink sweats ft. Kehlani</h6>
                     </div>
-                    <div class="recommended-music-tab">
+                    <div class="recommended-music-tab" onclick="musicTabClick('Girls Need Love','Summer Walker ft Drake','summer_girls_need_love',8)">
                         <img src="./images/summer_girls_need_love.jpg" alt="" class="recommended-music-image">
                         <h5 class="title">girls need love</h5>
                         <h6 class="artiste">Summer Walker</h6>
                     </div>
-                    <div class="recommended-music-tab">
+                    <div class="recommended-music-tab" onclick="musicTabClick('Out of Love','Alessia Cara','alessia_out_of_love', 9)">
                         <img src="./images/alessia_out_of_love.jpg" alt="" class="recommended-music-image">
                         <h5 class="title">out of love</h5>
                         <h6 class="artiste">Alessia cara</h6>
@@ -78,94 +83,106 @@
                        <div class="title">Love is Bad</div>
                        <div class="artiste">Minden</div>
                    </div>
-                   <span class="music-duration">4:20</span>
+                   <span class="music-duration">3:21</span>
                </div>
-               <div class="music-tab" id="music-tab-2" onclick="musicTabClick('Pretty Little Fears','6lack ft Jcole','6lack_pretty_little_fears', 2)" >
-                <span class="music-no" id="music-no-2"> 
-                    2
-                </span>
-                <img src="" alt="music playing" class="gif music-no" id="music-gif-2">
-                <div class="music-details">
-                    <div class="title">Pretty little fears</div>
-                    <div class="artiste">6lack ft Jcole</div>
+               <div class="music-tab" id="music-tab-2" onclick="musicTabClick('It\'s you','Ali Gatie','ali_its_you', 2)">
+                    <span class="music-no" id="music-no-2">2</span>
+                    <img src="" alt="music playing" class="gif music-no" id="music-gif-2">
+                    <div class="music-details">
+                        <div class="title">It's you</div>
+                        <div class="artiste">Ali Gatie</div>
+                    </div>
+                    <span class="music-duration">3:34</span>
                 </div>
-                <span class="music-duration">4:20</span>
-                </div>
-                <div class="music-tab" id="music-tab-3" onclick="musicTabClick('Love','jhene','jhene_love', 3)">
+               <div class="music-tab" id="music-tab-3" onclick="musicTabClick('Pretty Little Fears','6lack ft Jcole','6lack_pretty_little_fears', 3)" >
                     <span class="music-no" id="music-no-3"> 
                         3
-                     </span>
-                     <img src="" alt="music playing" class="gif music-no" id="music-gif-3">
+                    </span>
+                    <img src="" alt="music playing" class="gif music-no" id="music-gif-3">
+                    <div class="music-details">
+                        <div class="title">Pretty little fears</div>
+                        <div class="artiste">6lack ft Jcole</div>
+                    </div>
+                    <span class="music-duration">4:05</span>
+                </div>
+                <div class="music-tab" id="music-tab-4" onclick="musicTabClick('Love','jhene','jhene_love', 4)">
+                    <span class="music-no" id="music-no-4"> 
+                        4
+                    </span>
+                    <img src="" alt="music playing" class="gif music-no" id="music-gif-4">
                     <div class="music-details">
                         <div class="title">Love</div>
                         <div class="artiste">Jhene</div>
                     </div>
-                    <span class="music-duration">4:20</span>
+                    <span class="music-duration">2:36</span>
                 </div>
-                <div class="music-tab" id="music-tab-4" onclick="musicTabClick('Hollywood','Lewis Capaldi','lewis_hollywood', 4)">
-                    <span class="music-no" id="music-no-4"> 
-                        4
-                     </span>
-                     <img src="" alt="music playing" class="gif music-no" id="music-gif-4">
-                    <div class="music-details">
-                        <div class="title">Hollywood</div>
-                        <div class="artiste">Lewis Capaldi</div>
-                    </div>
-                    <span class="music-duration">4:20</span>
-                </div>
-                <div class="music-tab" id="music-tab-5" onclick="musicTabClick('pov','Ariana Grande','ariana_pov', 5)">
+                <div class="music-tab" id="music-tab-5" onclick="musicTabClick('Hollywood','Lewis Capaldi','lewis_hollywood', 5)">
                     <span class="music-no" id="music-no-5"> 
                         5
                      </span>
                      <img src="" alt="music playing" class="gif music-no" id="music-gif-5">
                     <div class="music-details">
-                        <div class="title">POV</div>
-                        <div class="artiste">Ariana Grande</div>
+                        <div class="title">Hollywood</div>
+                        <div class="artiste">Lewis Capaldi</div>
                     </div>
-                    <span class="music-duration">4:20</span>
+                    <span class="music-duration">3:41</span>
                 </div>
-                <div class="music-tab" id="music-tab-6" onclick="musicTabClick('At my Worst','Pink Sweats ft Kehlani','pink_at_my_worst', 6)">
+                <div class="music-tab" id="music-tab-6" onclick="musicTabClick('pov','Ariana Grande','ariana_pov', 6)">
                     <span class="music-no" id="music-no-6"> 
                         6
                      </span>
                      <img src="" alt="music playing" class="gif music-no" id="music-gif-6">
                     <div class="music-details">
-                        <div class="title">At my worst</div>
-                        <div class="artiste">Pink Sweats ft Kehlani</div>
+                        <div class="title">POV</div>
+                        <div class="artiste">Ariana Grande</div>
                     </div>
-                    <span class="music-duration">4:20</span>
+                    <span class="music-duration">3:22</span>
                 </div>
-                <div class="music-tab" id="music-tab-7" onclick="musicTabClick('Girls Need Love','Summer Walker ft Drake','summer_girls_need_love',7)">
+                <div class="music-tab" id="music-tab-7" onclick="musicTabClick('At my Worst','Pink Sweats ft Kehlani','pink_at_my_worst', 7)">
                     <span class="music-no" id="music-no-7"> 
                         7
                      </span>
                      <img src="" alt="music playing" class="gif music-no" id="music-gif-7">
                     <div class="music-details">
-                        <div class="title">Girls need love</div>
-                        <div class="artiste">Summer Walker ft Drake</div>
+                        <div class="title">At my worst</div>
+                        <div class="artiste">Pink Sweats ft Kehlani</div>
                     </div>
-                    <span class="music-duration">4:20</span>
+                    <span class="music-duration">2:49</span>
                 </div>
-                <div class="music-tab" id="music-tab-8" onclick="musicTabClick('Out of Love','Alessia Cara','alessia_out_of_love', 8)">
+                <div class="music-tab" id="music-tab-8" onclick="musicTabClick('Girls Need Love','Summer Walker ft Drake','summer_girls_need_love',8)">
                     <span class="music-no" id="music-no-8"> 
                         8
                      </span>
                      <img src="" alt="music playing" class="gif music-no" id="music-gif-8">
                     <div class="music-details">
+                        <div class="title">Girls need love</div>
+                        <div class="artiste">Summer Walker ft Drake</div>
+                    </div>
+                    <span class="music-duration">3:42</span>
+                </div>
+                <div class="music-tab" id="music-tab-9" onclick="musicTabClick('Out of Love','Alessia Cara','alessia_out_of_love', 9)">
+                    <span class="music-no" id="music-no-9"> 
+                        9
+                     </span>
+                     <img src="" alt="music playing" class="gif music-no" id="music-gif-9">
+                    <div class="music-details">
                         <div class="title">Out of Love</div>
                         <div class="artiste">Alessia Cara</div>
                     </div>
-                    <span class="music-duration">4:20</span>
+                    <span class="music-duration">3:48</span>
                 </div>
            </div>
            <div class="music-playing">
                 <img src="./images/minden_love_is_bad.jpg" alt="Image cover" class="image-cover" id="image-cover">
                 <div class="music-playing-section">
                     <div class="progress-bar">
-                        <div class="music-progress"></div>
+                        <progress id="progress" max="100" value="0"></progress>
+                        
                     </div>
                     <div class="music-playing-details">
-                        <audio src="./audios/lewis_hollywood.mp3" id="music-playing-audio"></audio>
+                        <audio id="music-playing-audio" preload="metadata">
+                            <source id='music' src="./audios/minden_love_is_bad.mp3" type="audio/mpeg">
+                        </audio>
                         <div class="music-names">
                             <div class="title" id="music-playing-name">Love is Bad</div>
                             <div class="artiste" id="music-playing-artiste">Minden</div>
